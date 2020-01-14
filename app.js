@@ -1,17 +1,21 @@
+// Callbacks
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+const render = require("./lib/renderHtml.js");
 
+//Npm i stuff
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+//print on team.html
 const outputPath = path.resolve(__dirname, "output", "team.html");
 
-const render = require("./lib/renderHtml.js");
-
+//arrays for user input
 const teamMembers = [];
 const idArray = [];
+
 
 function appMenu() {
 
@@ -246,3 +250,5 @@ function appMenu() {
 
 
 appMenu();
+
+//sourced from bootcamp gitlab dev uploads
