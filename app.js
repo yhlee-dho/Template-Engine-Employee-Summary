@@ -1,14 +1,16 @@
+// im redoing code without the part from master branch of gitlab.
+
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 
 const inquirer = require("inquirer");
-const path = require("path");
+// const path = require("path");
 const fs = require("fs");
 
-const outputPath = path.resolve(__dirname, "output", "team.html");
+// const outputPath = path.resolve(__dirname, "output", "team.html");
 
-const render = require("./lib/renderHtml.js");
+// const render = require("./lib/renderHtml.js");
 
 const teamMembers = [];
 const idArray = [];
@@ -240,7 +242,45 @@ function appMenu() {
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
   }
 
-  createManager();
+//   function buildTeam() {
+//     let renderHtml = fs.readFileSync("./lib/templates/main.html")
+//     fs.writeFileSync("./output/team.html", renderHtml, function(err) {
+//       if (err) throw err;
+//     })
+//     console.log("create team html");
+
+//     for (employee of teamMembers) {
+//       if (member.getTitle() == "Manager") {
+//         renderEmployee("manager", member.getName(), member.getId(), member.getEmail(), "Office: " + member.getOfficeNumber());
+//       } else if (member.getTitle() == "Engineer") {
+//         renderEmployee("engineer", member.getName(), member.getId(), member.getEmail(), "Github: " + member.getGithub());
+//       } else if (member.getTitle() == "Intern") {
+//         renderEmployee("intern", member.getName(), member.getId(), member.getEmail(), "School: " + member.getSchool());
+//       }
+//     }
+//     fs.appendFileSync("./output/team.html", "</div></main></body></html>", function(err) {
+//       if (err) throw err;
+//     });
+//     console.log("team html complete")
+
+//   }
+
+//   function renderEmployee(employeeTitle, name, id, email, employeeInfo) {
+//     let data = fs.readFileSync(`./lib/templates/${employeeTitle}.html`, `utf8`)
+//     data = data.replace("name", name);
+//     data = data.replace("id", `id: ${id}`);
+//     data = data.replace("email", `email: <a href="mailto:${email}">${email}</a>`);
+//     data = data.replace("employeeInfo", employeeInfo);
+
+//     fs.appendFileSync("./output/team.html", data, err => { if(err) throw err; })
+
+//     console.log("render employee info")
+//   }
+
+
+
+
+//   createManager();
 
 }
 
